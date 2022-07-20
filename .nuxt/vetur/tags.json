@@ -1,0 +1,14 @@
+{
+  "Home": {
+    "description": "Auto imported from components/home.vue"
+  },
+  "Navigation": {
+    "description": "Auto imported from components/navigation.vue"
+  },
+  "NuxtLogo": {
+    "description": "Auto imported from components/NuxtLogo.vue"
+  },
+  "Tutorial": {
+    "description": "Auto imported from components/Tutorial.vue"
+  }
+}

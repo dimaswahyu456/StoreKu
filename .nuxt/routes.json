@@ -1,0 +1,58 @@
+[
+  {
+    "name": "post",
+    "path": "/post",
+    "component": "D:\\\\tugas kuliah\\\\semester 6\\\\ITMGM\\\\nuxrt-crud\\\\pages\\\\post\\\\index.vue",
+    "chunkName": "pages/post/index",
+    "_name": "_5b851694"
+  },
+  {
+    "name": "product",
+    "path": "/product",
+    "component": "D:\\\\tugas kuliah\\\\semester 6\\\\ITMGM\\\\nuxrt-crud\\\\pages\\\\product\\\\index.vue",
+    "chunkName": "pages/product/index",
+    "_name": "_6fd166a2"
+  },
+  {
+    "name": "transaksi",
+    "path": "/transaksi",
+    "component": "D:\\\\tugas kuliah\\\\semester 6\\\\ITMGM\\\\nuxrt-crud\\\\pages\\\\transaksi.vue",
+    "chunkName": "pages/transaksi",
+    "_name": "_a422eaa8"
+  },
+  {
+    "name": "post-create",
+    "path": "/post/create",
+    "component": "D:\\\\tugas kuliah\\\\semester 6\\\\ITMGM\\\\nuxrt-crud\\\\pages\\\\post\\\\create\\\\index.vue",
+    "chunkName": "pages/post/create/index",
+    "_name": "_686676ba"
+  },
+  {
+    "name": "product-create",
+    "path": "/product/create",
+    "component": "D:\\\\tugas kuliah\\\\semester 6\\\\ITMGM\\\\nuxrt-crud\\\\pages\\\\product\\\\create\\\\index.vue",
+    "chunkName": "pages/product/create/index",
+    "_name": "_250945b3"
+  },
+  {
+    "name": "post-edit-id",
+    "path": "/post/edit/:id?",
+    "component": "D:\\\\tugas kuliah\\\\semester 6\\\\ITMGM\\\\nuxrt-crud\\\\pages\\\\post\\\\edit\\\\_id.vue",
+    "chunkName": "pages/post/edit/_id",
+    "_name": "_afec7558"
+  },
+  {
+    "name": "product-edit-id",
+    "path": "/product/edit/:id?",
+    "component": "D:\\\\tugas kuliah\\\\semester 6\\\\ITMGM\\\\nuxrt-crud\\\\pages\\\\product\\\\edit\\\\_id.vue",
+    "chunkName": "pages/product/edit/_id",
+    "_name": "_26560e66"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\tugas kuliah\\\\semester 6\\\\ITMGM\\\\nuxrt-crud\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_7dbfe454"
+  }
+]
