@@ -6,65 +6,49 @@
         <b-card class="shadow-md border-0 rounded-lg">
           <h5>TAMBAH TRANSAKSI</h5>
           <hr />
-          <b-form @submit="store">
-            <b-form-group label="Nama Produk">
-              <b-form-input
-                type="text"
-                v-model="product.nama_produk"
-                :class="{ 'is-invalid': validation.nama_produk }"
-                placeholder="Masukkan Nama Produk"
-              >
-              </b-form-input>
-              <div v-if="validation.nama_produk" class="mt-2">
-                <b-alert show variant="danger">{{
-                  validation.nama_produk[0]
-                }}</b-alert>
-              </div>
-            </b-form-group>
-            <b-form-group label="Harga">
-              <b-form-input
-                type="text"
-                v-model="product.harga"
-                :class="{ 'is-invalid': validation.harga }"
-                placeholder="Masukkan Harga Produk"
-              >
-              </b-form-input>
-              <div v-if="validation.harga" class="mt-2">
-                <b-alert show variant="danger">{{
-                  validation.harga[0]
-                }}</b-alert>
-              </div>
-            </b-form-group>
-            <b-form-group label="SKU">
-              <b-form-input
-                type="text"
-                v-model="product.sku"
-                :class="{ 'is-invalid': validation.sku }"
-                placeholder="Masukkan SKU"
-              >
-              </b-form-input>
-              <div v-if="validation.sku" class="mt-2">
-                <b-alert show variant="danger">{{ validation.sku[0] }}</b-alert>
-              </div>
-            </b-form-group>
-            <b-form-group label="Deskripsi">
-              <b-form-textarea
-                id="textarea"
-                v-model="product.deskripsi"
-                :class="{ 'is-invalid': validation.deskripsi }"
-                placeholder="Masukkan Deskripsi Barang"
-                rows="5"
-              >
-              </b-form-textarea>
-              <div v-if="validation.deskripsi" class="mt-2">
-                <b-alert show variant="danger">{{
-                  validation.deskripsi[0]
-                }}</b-alert>
-              </div>
-            </b-form-group>
-            <b-button type="submit" variant="primary">SIMPAN</b-button>
-            <a href="/product/" class="btn btn-primary">Back</a>
-          </b-form>
+          <div>
+            <b-form-datepicker
+              id="example-datepicker"
+              v-model="penjualan.tanggal"
+              class="mb-2"
+            ></b-form-datepicker>
+          </div>
+
+          <b-table
+            striped
+            bordered
+            hover
+            :items="posts1"
+            :fields="fields"
+            show-empty
+          >
+          </b-table>
+          <b-form-group label="Total">
+            <b-form-input
+              type="text"
+              v-model="penjualan.total"
+              :class="{ 'is-invalid': validation.total }"
+              placeholder="Total"
+            >
+            </b-form-input>
+            <div v-if="validation.total" class="mt-2">
+              <b-alert show variant="danger">{{ validation.total[0] }}</b-alert>
+            </div>
+          </b-form-group>
+          <b-form-group label="Total Bayar">
+            <b-form-input
+              type="text"
+              v-model="penjualan.total"
+              :class="{ 'is-invalid': validation.total }"
+              placeholder="Total Bayar"
+            >
+            </b-form-input>
+            <div v-if="validation.total" class="mt-2">
+              <b-alert show variant="danger">{{ validation.total[0] }}</b-alert>
+            </div>
+          </b-form-group>
+          <b-button type="submit" variant="primary">SIMPAN</b-button>
+          <a href="/transaksi/" class="btn btn-primary">Back</a>
         </b-card>
       </b-col>
     </b-row>
@@ -75,40 +59,79 @@
 export default {
   data() {
     return {
-      product: {
-        nama_produk: "",
-        harga: "",
-        sku: "",
-        deskripsi: "",
+      //header table
+      penjualan: {
+        tanggal: "",
+        total: "",
       },
       //state validation
       validation: [],
+
+      fields: ["nama_produk", "harga", "qty", "sub-total"],
+      fields1: ["total"],
+      fields2: ["tanggal"],
+      //posts data
+      posts: [],
+      posts1: [],
+      post4: [],
     };
   },
 
-  methods: {
-    //method "store"
-    async store(e) {
-      e.preventDefault();
+  //<template v-slot:cell(actions)="row">
+  // <b-button
+  // :to="{ name: 'product-edit-id', params: { id: row.item.id } }"
+  //variant="warning"
+  //size="sm"
+  //>EDIT
+  // </b-button>
+  //<b-button variant="danger" size="sm" @click="deletePost(row)"
+  //>DELETE</b-button
+  //>
+  // </template>
 
-      //send data ke Rest API
-      await this.$axios
-        .post("/api/product", {
-          //data yang dikirim ke server
-          nama_produk: this.product.nama_produk,
-          harga: this.product.harga,
-          sku: this.product.sku,
-          deskripsi: this.product.deskripsi,
-        })
-        .then(() => {
-          this.$router.push({
-            name: "product",
-          });
-        })
-        .catch((error) => {
-          //assign validation
-          this.validation = error.response.data;
-        });
+  mounted() {
+    //fething ke Rest API
+    this.$axios
+      .get("/api/product")
+
+      .then((response) => {
+        //assign response ke state "posts"
+        this.posts1 = response.data.data;
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+
+    this.$axios
+      .get("/api/penjualan")
+
+      .then((response) => {
+        //assign response ke state "posts"
+        this.posts = response.data.data;
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+
+    this.$axios
+      .get("/api/transaksidetail")
+
+      .then((response) => {
+        //assign response ke state "posts"
+        this.posts4 = response.data.data;
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+  },
+
+  methods: {
+    async deletePost(row) {
+      //delete data post by ID
+      await this.$axios.delete(`/api/product/${row.item.id}`).then(() => {
+        //remove item array by index
+        this.posts.splice(row.index, 1);
+      });
     },
   },
 };

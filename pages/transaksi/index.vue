@@ -21,12 +21,6 @@
             show-empty
           >
             <template v-slot:cell(actions)="row">
-              <b-button
-                :to="{ name: 'transaksi-edit-id', params: { id: row.item.id } }"
-                variant="warning"
-                size="sm"
-                >EDIT
-              </b-button>
               <b-button variant="danger" size="sm" @click="deletePost(row)"
                 >DELETE</b-button
               >
