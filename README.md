@@ -67,3 +67,11 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+#Nama Kelompok :
+Directed By :
+
+Dimas Wahyu A (19053001)
+Rizki Tomi F (19053002)
+Ainur Rohmat (19053007)
+Irza Putra A (19053022)
