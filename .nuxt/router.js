@@ -6,11 +6,14 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _5b851694 = () => interopDefault(import('..\\pages\\post\\index.vue' /* webpackChunkName: "pages/post/index" */))
 const _6fd166a2 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index" */))
-const _a422eaa8 = () => interopDefault(import('..\\pages\\transaksi.vue' /* webpackChunkName: "pages/transaksi" */))
+const _cbc29f54 = () => interopDefault(import('..\\pages\\transaksi\\index.vue' /* webpackChunkName: "pages/transaksi/index" */))
 const _686676ba = () => interopDefault(import('..\\pages\\post\\create\\index.vue' /* webpackChunkName: "pages/post/create/index" */))
 const _250945b3 = () => interopDefault(import('..\\pages\\product\\create\\index.vue' /* webpackChunkName: "pages/product/create/index" */))
+const _2fa2125a = () => interopDefault(import('..\\pages\\transaksi\\create\\index.vue' /* webpackChunkName: "pages/transaksi/create/index" */))
+const _420a69fd = () => interopDefault(import('..\\pages\\transaksi\\detail.vue' /* webpackChunkName: "pages/transaksi/detail" */))
 const _afec7558 = () => interopDefault(import('..\\pages\\post\\edit\\_id.vue' /* webpackChunkName: "pages/post/edit/_id" */))
 const _26560e66 = () => interopDefault(import('..\\pages\\product\\edit\\_id.vue' /* webpackChunkName: "pages/product/edit/_id" */))
+const _40b79e18 = () => interopDefault(import('..\\pages\\transaksi\\edit\\_id.vue' /* webpackChunkName: "pages/transaksi/edit/_id" */))
 const _7dbfe454 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -34,7 +37,7 @@ export const routerOptions = {
     name: "product"
   }, {
     path: "/transaksi",
-    component: _a422eaa8,
+    component: _cbc29f54,
     name: "transaksi"
   }, {
     path: "/post/create",
@@ -45,6 +48,14 @@ export const routerOptions = {
     component: _250945b3,
     name: "product-create"
   }, {
+    path: "/transaksi/create",
+    component: _2fa2125a,
+    name: "transaksi-create"
+  }, {
+    path: "/transaksi/detail",
+    component: _420a69fd,
+    name: "transaksi-detail"
+  }, {
     path: "/post/edit/:id?",
     component: _afec7558,
     name: "post-edit-id"
@@ -52,6 +63,10 @@ export const routerOptions = {
     path: "/product/edit/:id?",
     component: _26560e66,
     name: "product-edit-id"
+  }, {
+    path: "/transaksi/edit/:id?",
+    component: _40b79e18,
+    name: "transaksi-edit-id"
   }, {
     path: "/",
     component: _7dbfe454,

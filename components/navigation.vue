@@ -15,12 +15,7 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item to="/product">Product</b-nav-item>
-            <b-nav-item href="https://santrikoding.com/ebook"
-              >Transaksi</b-nav-item
-            >
-            <b-nav-item href="https://santrikoding.com/kelas"
-              >Detail Transaksi</b-nav-item
-            >
+            <b-nav-item href="/transaksi/">Transaksi</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
