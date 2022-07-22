@@ -69,9 +69,8 @@ This directory contains your Vuex store files. Creating a file in this directory
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
 
 # Nama Kelompok
-Directed By :
 
-Dimas Wahyu A (19053001)
-Rizki Tomi F (19053002)
-Ainur Rohmat (19053007)
-Irza Putra A (19053022)
+1. Dimas Wahyu A (19053001)
+2. Rizki Tomi F (19053002)
+3. Ainur Rohmat (19053007)
+4. Irza Putra A (19053022)
